@@ -11,26 +11,38 @@
         <h1>Adicionar Veículo</h1>
     </div>
     <div class="row">
-        <form th:object="${veiculoRequestDTO}" action="/veiculos" method="POST">
-            <div class="mb-3">
-                <label class="form-label">Cor</label>
-                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{cor}">
-                <div class="invalid-feedback" th:errors="*{cor}"></div>
+        <form th:object="${veiculoRequestDTO}" action="/veiculo" method="POST">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3" >
+                        <label class="form-label">Cor</label>
+                        <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{cor}">
+                        <div class="invalid-feedback" th:errors="*{cor}"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label">Ano de Fabricação</label>
+                        <input class="form-control" th:errorclass="is-invalid" type="number" th:field="*{anoFabricacao}">
+                        <div class="invalid-feedback" th:errors="*{anoFabricacao}"></div>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Ano de Fabricação</label>
-                <input class="form-control" th:errorclass="is-invalid" type="number" th:field="*{anoFabricacao}">
-                <div class="invalid-feedback" th:errors="*{anoFabricacao}"></div>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Ano do modelo</label>
-                <input class="form-control" th:errorclass="is-invalid" type="number" th:field="*{anoModelo}">
-                <div class="invalid-feedback" th:errors="*{anoModelo}"></div>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Placa</label>
-                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{placa}">
-                <div class="invalid-feedback" th:errors="*{placa}"></div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label">Ano do modelo</label>
+                        <input class="form-control" th:errorclass="is-invalid" type="number" th:field="*{anoModelo}">
+                        <div class="invalid-feedback" th:errors="*{anoModelo}"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label">Placa</label>
+                        <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{placa}">
+                        <div class="invalid-feedback" th:errors="*{placa}"></div>
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Modelo</label>

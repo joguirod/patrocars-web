@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd"><html lang="en">
+<head th:replace="~{fragmentos :: head('Editar veículo')}"></head>
 <body>
-
+<div class="container">
+    <div class="row">
+        <h1>Editar Veículo</h1>
+    </div>
+    <div class="row">
+        <form th:object="${veiculoRequestDTO}" action="" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Cor</label>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{cor}">
+                <div class="invalid-feedback" th:errors="*{cor}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ano de Fabricação</label>
+                <input class="form-control" th:errorclass="is-invalid" type="number" th:field="*{anoFabricacao}">
+                <div class="invalid-feedback" th:errors="*{anoFabricacao}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ano do modelo</label>
+                <input class="form-control" th:errorclass="is-invalid" type="number" th:field="*{anoModelo}">
+                <div class="invalid-feedback" th:errors="*{anoModelo}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{placa}">
+                <div class="invalid-feedback" th:errors="*{placa}"></div>
+            </div>
+            <button class="btn btn-primary" type="submit">Salvar</button>
+            <a href="javascript:history.back()">Voltar</a>
+        </form>
+    </div>
+</div>
 </body>
 </html>

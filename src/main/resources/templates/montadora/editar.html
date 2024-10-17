@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd"><html lang="en">
+<head th:replace="~{fragmentos :: head('Editar Montadora')}"></head>
 
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Editar Montadora</h1>
+    </div>
+    <div class="row">
+        <form th:object="${montadoraRequestDTO}" action="" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{nome}">
+                <div class="invalid-feedback" th:errors="*{nome}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">País</label>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{pais}">
+                <div class="invalid-feedback" th:errors="*{pais}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ano de Fundação</label>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{anoFundacao}">
+                <div class="invalid-feedback" th:errors="*{anoFundacao}"></div>
+            </div>
+            <button class="btn btn-primary" type="submit">Salvar</button>
+            <a href="javascript:history.back()">Voltar</a>
+        </form>
+    </div>
+</div>
 </body>
 </html>

@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -30,6 +31,8 @@ public class ModeloVeiculoRequestDTO {
     @NotNull(message="A montadora é de preenchimento obrigatório")
     private Montadora montadora;
 
+    private UUID id;
+
     public ModeloVeiculo toModeloVeiculo(){
         ModeloVeiculo modeloVeiculo = new ModeloVeiculo();
         modeloVeiculo.setNome(nome);
@@ -38,6 +41,7 @@ public class ModeloVeiculoRequestDTO {
         modeloVeiculo.setTurbo(turbo);
         modeloVeiculo.setAutomatico(automatico);
         modeloVeiculo.setMontadora(montadora);
+        modeloVeiculo.setId(id);
 
         return modeloVeiculo;
     }

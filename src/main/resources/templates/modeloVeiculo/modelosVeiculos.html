@@ -2,10 +2,8 @@
 <head th:replace="~{fragmentos :: head('Modelos de Veículos')}"></head>
 
 <body>
+    <header th:replace="~{fragmentos :: header('Lista de Modelo Veículo', 'modeloVeiculo')}"></header>
     <div class="container">
-        <div class="row">
-            <h1>Lista de Modelos Veículos</h1>
-        </div>
         <div class="col-12">
             <table class="table table-hover">
                 <thead>
@@ -26,11 +24,14 @@
                         <td class="col-2" th:text="${modeloVeiculo.valorReferencia}">Valor de Referência</td>
                         <td class="col-2" th:text="${modeloVeiculo.turbo} ? 'Sim' : 'Não'">Turbo</td>
                         <td class="col-2" th:text="${modeloVeiculo.automatico} ? 'Sim' : 'Não'">Automático</td>
-                        <td class="col-1"><a href="#">Editar</a></td>
+                        <td class="col-1"><td class="col-1"><a th:href="@{/modeloVeiculo/editar/{id}(id=${modeloVeiculo.id})}">Editar</a></td></td>
                         <td class="col-1"><a href="#">Deletar</a></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="row">
+            <a href="/modeloVeiculo/adicionar">Novo Modelo Veículo</a>
         </div>
     </div>
 </body>

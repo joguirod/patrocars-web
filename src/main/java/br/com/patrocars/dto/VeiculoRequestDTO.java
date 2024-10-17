@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Year;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -30,6 +31,8 @@ public class VeiculoRequestDTO {
     @NotNull(message="O modelo veículo é de preenchimento obrigatório")
     private ModeloVeiculo modeloVeiculo;
 
+    private UUID id;
+
     public Veiculo toVeiculo(){
         Veiculo veiculo = new Veiculo();
         veiculo.setCor(cor);
@@ -37,6 +40,7 @@ public class VeiculoRequestDTO {
         veiculo.setAnoModelo(anoModelo);
         veiculo.setPlaca(placa);
         veiculo.setModelo(modeloVeiculo);
+        veiculo.setId(id);
 
         return veiculo;
     }

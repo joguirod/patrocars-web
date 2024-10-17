@@ -7,23 +7,23 @@
         <h1>Adicionar Montadora</h1>
     </div>
     <div class="row">
-        <form action="/montadoras" method="POST">
+        <form th:object="${montadoraRequestDTO}" action="/montadora" method="POST">
             <div class="mb-3">
                 <label class="form-label">Nome</label>
-                <input class="form-control" type="text" name="nome">
-                <div></div>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{nome}">
+                <div class="invalid-feedback" th:errors="*{nome}"></div>
             </div>
             <div class="mb-3">
                 <label class="form-label">País</label>
-                <input class="form-control" type="text" name="pais">
-                <div></div>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{pais}">
+                <div class="invalid-feedback" th:errors="*{pais}"></div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Ano de Fundação</label>
-                <input class="form-control" type="text" name="anoFundacao">
-                <div></div>
+                <input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{anoFundacao}">
+                <div class="invalid-feedback" th:errors="*{anoFundacao}"></div>
             </div>
-            <button class="btn btn-primary" type="submit">Submeter</button>
+            <button class="btn btn-primary" type="submit">Salvar</button>
             <a href="javascript:history.back()">Voltar</a>
         </form>
     </div>
