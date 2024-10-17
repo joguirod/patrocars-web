@@ -1,15 +1,24 @@
-package br.com.patrocars.model;
+package br.com.patrocars.domain.model.veiculo;
+
+import br.com.patrocars.domain.model.modeloVeiculo.ModeloVeiculo;
+import jakarta.persistence.*;
 
 import java.time.Year;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
 public class Veiculo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+
     private UUID id;
     private String cor;
     private Year anoFabricacao;
     private Year anoModelo;
     private String placa;
+
+    @ManyToOne
     private ModeloVeiculo modelo;
 
     public Veiculo() {

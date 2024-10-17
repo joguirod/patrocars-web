@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd"><html lang="en">
+<head th:replace="~{fragmentos :: head('Adicionar Montadora')}"></head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Adicionar Montadora</h1>
+    </div>
+    <div class="row">
+        <form action="/montadoras" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input class="form-control" type="text" name="nome">
+                <div></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">País</label>
+                <input class="form-control" type="text" name="pais">
+                <div></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ano de Fundação</label>
+                <input class="form-control" type="text" name="anoFundacao">
+                <div></div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submeter</button>
+            <a href="javascript:history.back()">Voltar</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

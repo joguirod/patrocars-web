@@ -1,0 +1,37 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd"><html lang="en">
+<head th:replace="~{fragmentos :: head('Modelos de Veículos')}"></head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Lista de Modelos Veículos</h1>
+        </div>
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col">ID</th>
+                        <th class="col">Nome do modelo</th>
+                        <th class="col">Valor de Referência</th>
+                        <th class="col">Turbo</th>
+                        <th class="col">Automático</th>
+                        <th class="col"></th>
+                        <th class="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="modeloVeiculo : ${modelosVeiculos}">
+                        <th class="col-1" scope="row" th:text="${modeloVeiculo.id}">ID</th>
+                        <td class="col-4" th:text="${modeloVeiculo.nome}">Nome do modelo</td>
+                        <td class="col-2" th:text="${modeloVeiculo.valorReferencia}">Valor de Referência</td>
+                        <td class="col-2" th:text="${modeloVeiculo.turbo} ? 'Sim' : 'Não'">Turbo</td>
+                        <td class="col-2" th:text="${modeloVeiculo.automatico} ? 'Sim' : 'Não'">Automático</td>
+                        <td class="col-1"><a href="#">Editar</a></td>
+                        <td class="col-1"><a href="#">Deletar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,16 +1,25 @@
-package br.com.patrocars.model;
+package br.com.patrocars.domain.model.modeloVeiculo;
+
+import br.com.patrocars.domain.model.montadora.Montadora;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
 public class ModeloVeiculo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     private String nome;
     private BigDecimal valorReferencia;
     private float motorizacao;
     private boolean turbo;
     private boolean automatico;
+
+    @ManyToOne
     private Montadora montadora;
 
     public ModeloVeiculo() {

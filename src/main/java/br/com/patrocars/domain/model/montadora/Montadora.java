@@ -1,9 +1,18 @@
-package br.com.patrocars.model;
+package br.com.patrocars.domain.model.montadora;
+
+import br.com.patrocars.dto.MontadoraRequestDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
 public class Montadora {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
     private String pais;
